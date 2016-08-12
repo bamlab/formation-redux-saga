@@ -138,12 +138,11 @@
 	color: #606c76;
 }
 
-.main .conatiner {
+.main .container {
 	display: flex;
 	flex: 1;
 }
 
-/* Tips */
 .button-black {
 	background-color: #000;
 	border-color: #000;
@@ -165,4 +164,33 @@
 	height: 2.8rem;
 	line-height: 2.8rem;
 	padding: 0 1.5rem;
+}
+
+input[type="radio"] + label {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+input[type="radio"] + label span {
+    box-shadow: 0 0 0 2px '#cccccc';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: -1px 7px 0 0;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type="radio"] + label span {
+  border: 8px solid '#ffffff';
+  background-color: '#cccccc';
+}
+
+input[type="radio"]:checked + label span{
+  background-color: '#CC3300';
+}
+
+.checkbox {
+	display: inline-block
 }

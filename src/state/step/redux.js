@@ -1,6 +1,5 @@
 // Actions
 export const SET		= 'formation-redux/step/SET';
-export const UPDATE = 'formation-redux/step/UPDATE';
 
 // Reducer
 export default function reducer(state = 0, action = {}) {

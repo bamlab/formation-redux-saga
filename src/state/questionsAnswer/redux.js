@@ -9,6 +9,7 @@ export default function reducer(state = {}, action = {}) {
 			const newQuestionAnswer = { ...state[action.meta.questionID], ...action.payload };
 			const newQuestionsAnswer  = { ...state };
 			newQuestionsAnswer[action.meta.questionID] = newQuestionAnswer;
+
 			return newQuestionsAnswer;
 		case FLUSH_ALL:
 			return {};
