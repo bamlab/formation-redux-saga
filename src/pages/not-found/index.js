@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NotFoundPage extends Component {
+export class NotFoundPage extends Component {
   render() {
     return (
       <img src={require('./404.png')} alt="404" style={{border: 0, width: 600, margin: 30}} />

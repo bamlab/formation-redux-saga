@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 // - react-redux allow easier synchronisation between redux state and react ui comnent
 import { Provider } from 'react-redux'
 // - react router handle the page changes
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 // - to make possible to dispatch redux action to switch route
 import { syncHistoryWithStore} from 'react-router-redux'
 
@@ -18,24 +18,23 @@ import createStore from './state/createStore';
 const store = createStore(undefined, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 
-// Import a short css for better typography
-// still basic
-import './milligram.css';
+// Import a short css for better typography : still basic
 import './style.css';
 
 // import pages
 import App from './App';
-import FirstQuestionPage from './pages/1-first_question';
-import SecondQuestionPage from './pages/2-second_question';
+import LandingPage from './pages/landing';
+import QuestionsPage from './pages/questions';
 import ScorePage from './pages/score';
 import NotFoundPage from './pages/not-found'
 
+// render the right page to the dom
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <Route path="1" component={FirstQuestionPage}/>
-				<Route path="2" component={SecondQuestionPage}/>
+				<IndexRoute component={LandingPage}/>
+        <Route path="question/:id" component={QuestionsPage}/>
 				<Route path="score" component={ScorePage}/>
 				<Route path="*" component={NotFoundPage}/>
       </Route>

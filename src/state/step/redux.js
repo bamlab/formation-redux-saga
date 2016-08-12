@@ -3,9 +3,10 @@ export const SET		= 'formation-redux/step/SET';
 export const UPDATE = 'formation-redux/step/UPDATE';
 
 // Reducer
-export default function reducer(state = {}, action = {}) {
+export default function reducer(state = 0, action = {}) {
   switch (action.type) {
-    // do reducer stuff
+    case SET:
+			return action.payload;
     default: return state;
   }
 }
@@ -13,8 +14,4 @@ export default function reducer(state = {}, action = {}) {
 // Action Creators
 export function setStep(payload) {
   return { type: SET, payload };
-}
-
-export function updateStep(payload) {
-  return { type: UPDATE, payload };
 }

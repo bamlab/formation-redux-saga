@@ -5,7 +5,13 @@ export const FLUSH_ALL	= 'formation-redux/question/FLUSH_ALL';
 // Reducer
 export default function reducer(state = {}, action = {}) {
   switch (action.type) {
-    // do reducer stuff
+    case MODIFY:
+			const newQuestion = { ...state[action.meta.questionID], ...action.payload };
+			const newQuestions  = { ...state };
+			newQuestions[action.meta.questionID] = newQuestion;
+			return newQuestions;
+		case FLUSH_ALL:
+			return {};
     default: return state;
   }
 }

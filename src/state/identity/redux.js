@@ -5,7 +5,10 @@ export const UPDATE = 'formation-redux/identity/UPDATE';
 // Reducer
 export default function reducer(state = {}, action = {}) {
   switch (action.type) {
-    // do reducer stuff
+    case SET:
+			return action.payload;
+		case UPDATE:
+			return {...state, ...action.payload};
     default: return state;
   }
 }

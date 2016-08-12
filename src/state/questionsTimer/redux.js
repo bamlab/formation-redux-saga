@@ -3,9 +3,15 @@ export const MODIFY 		= 'formation-redux/questionTimer/MODIFY';
 export const FLUSH_ALL	= 'formation-redux/questionTimer/FLUSH_ALL';
 
 // Reducer
-export default function reducer(state = {}, action = {}) {
+export default function reducer(state = 0, action = {}) {
   switch (action.type) {
-    // do reducer stuff
+    case MODIFY:
+			const newQuestionTimer = action.payload;
+			const newQuestionsTimer  = { ...state };
+			newQuestionsTimer[action.meta.questionID] = newQuestionTimer;
+			return newQuestionsTimer;
+		case FLUSH_ALL:
+			return {};
     default: return state;
   }
 }

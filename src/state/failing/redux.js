@@ -2,10 +2,12 @@
 export const SET  = 'formation-redux/failing/SET';
 
 // Reducer
-export default function reducer(state = {}, action = {}) {
+export default function reducer(state = false, action = {}) {
   switch (action.type) {
-    // do reducer stuff
-    default: return state;
+    case SET:
+			return action.payload;
+    default:
+			return state;
   }
 }
 

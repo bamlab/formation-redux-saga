@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// this is common page : the subsequent page will render
+// at the page of { this.prop.children }
 class App extends Component {
   render() {
     return (
